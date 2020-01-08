@@ -46,10 +46,11 @@ server.post('/searches', (req, res) => {
 
     if (req.body.searchtype === 'title') {
         url = url + req.body.search;
-    }
+        console.log(' Title url : \n\n\n\n\n\n ', url);   
+     }
     else if (req.body.searchtype === 'author') {
         url = url + req.body.search;
-        // console.log(url)
+        console.log(' Author url : \n\n\n\n\n\n', url);   
     }
 
     superagent.get(url)
@@ -63,7 +64,7 @@ server.post('/searches', (req, res) => {
                     return new Book(book);
                 });
             // let listBooks = data.body.items;
-            console.log('books : \n\n\n\n\n', books);
+            // console.log('books : \n\n\n\n\n', books);
             res.render('pages/serches/show', {books: books})
         })
         .catch(error => {
