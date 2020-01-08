@@ -1,0 +1,21 @@
+/* The container */
+.container {
+    display: block;
+    position: relative;
+    margin-bottom: 5px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border-radius: 5px;
+    background-color: rgb(172, 175, 175);
+    margin-left: 55px;
+    margin-right: 55px;
+    margin-top: 30px;
+    padding: 20px;
+    width: 350px ;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: x-large;
+  }

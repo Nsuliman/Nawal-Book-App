@@ -1,0 +1,50 @@
+/* Styling index ejs  */
+
+body {
+  background-color: black;
+  width: 500px;
+  margin: 0px auto;
+  border: 3px solid gray;
+  }
+
+  header {
+    background-color: black;
+    color: white;
+    padding: 10px;
+  }
+
+  main  {
+    background-color: gray;
+  }
+
+
+  form {
+  display:flex;
+  flex-direction:column;
+  width: 300px;
+}
+
+
+label {
+  display:flex;
+  flex-direction:column;
+  margin-bottom: 1.5em;
+  font-size: x-large;
+}
+
+button {
+  background-color: black;
+  color: white;
+  padding: 20px;
+  width: 390px ;
+  margin-left: 0px;
+  margin-right: 55px;
+  margin-top: 30px;
+  text-align: center;
+  border-radius: 5px;
+  font-family: cursive;
+  font-size: x-large;
+}
+
+/* End of styyling lab11  */
+
