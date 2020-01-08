@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Books</title>
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/modules.css">
+    <link rel="stylesheet" href="styles/layout.css">
+
+</head>
+
+<body>
+    <header>
+        <h1> Best Books !</h1>
+    </header>
+    <main>
+        <h2> Search Results </h2>
+                <% books.forEach((book)=> { %>
+                    <div class="bookdetails">
+                    <p> ** Book Details ** </p><br>
+                    <img class="bookimage" src=<%=book.image %><br>
+                    <p class="booktitle">Title : <%-book.title%></p>
+                    <p class="bookauthor">Author : <%-book.author %></p>
+                    <p class="booktype"> ISBN : <%= book.isbn %></p>
+                    <p class="bookdescp">Book Description :<%= book.des%></p>
+                <form action="/pages/serches/show" method="POST">
+                    <button class="selectbutton" type="submit"> Select This Book </button>
+             </form>
+                <br><br><br><br>
+            </div>
+                <% }); %>
+        </main>
+</body>
+
+</html>
