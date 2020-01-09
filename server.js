@@ -3,12 +3,12 @@
 /******** dependencies *****/
 
 require('dotenv').config();
-
 const express = require('express');
-
 const cors = require('cors');
-
 const superagent = require('superagent');
+const pg = require('pg');                           
+const methodOverride = require('method-override')
+const expressLayouts = require('express-ejs-layouts')
 
 const PORT = process.env.PORT || 3000;
 
@@ -16,10 +16,19 @@ const server = express();
 
 server.use(cors());
 
+// DataBase
+
+
+const client = new pg.Client(process.env.DB_URL);
+client.on('error',err => console.error(err));
+
 server.use(express.json());
 server.use(express.static('./public'));
 server.use(express.urlencoded({ extended: true }));
 server.set('view engine', 'ejs');
+// server.use(methodOverride(middleware));
+server.use(expressLayouts);
+
 
 /******************************* Routes ***********************************/
 
@@ -38,19 +47,29 @@ server.get('/', (req, res) => {
     res.render('pages/index');
 });
 
-// Shows the Results 
+// Restore Data From DataBase 
+// server.get('/data', (req,res) =>
+// {
+//     let SQL = `SELECT * FROM books `
+//     client.query(SQL)
+//         .then(data => {
+//             res.render('pages/index', { books: data.rows })
+//         })
+// });
 
+
+// Shows the Results 
 server.post('/searches', (req, res) => {
     let url = 'https://www.googleapis.com/books/v1/volumes?q=';
     // console.log('urllllllllllllllllllllllllllllll : ', url);
 
     if (req.body.searchtype === 'title') {
         url = url + req.body.search;
-        console.log(' Title url : \n\n\n\n\n\n ', url);   
+        // console.log(' Title url : \n\n\n\n\n\n ', url);   
      }
     else if (req.body.searchtype === 'author') {
         url = url + req.body.search;
-        console.log(' Author url : \n\n\n\n\n\n', url);   
+        // console.log(' Author url : \n\n\n\n\n\n', url);   
     }
 
     superagent.get(url)
@@ -87,6 +106,9 @@ function Book(data) {
 } // End of location constructor function 
 
 
-
 /******************************* Server Listening  ***********************************/
-server.listen(PORT, () => console.log('New Book App , listening On port # : ', PORT));
+client.connect()
+.then( () => 
+{
+    server.listen(PORT, () => console.log('New Book App , listening On port # : ', PORT));
+});
