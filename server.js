@@ -85,7 +85,7 @@ server.post('/searches', (req, res) => {
                 });
             // let listBooks = data.body.items;
             // console.log('books : \n\n\n\n\n', books);
-            res.render('pages/serches/show', {books: books})
+            res.render('pages/books/show', {books: books})
         })
         .catch(error => {
             // console.log('Errorrrrrrrrrrrr : ', error);
@@ -106,6 +106,27 @@ server.get('/books/:books_id',(req,res) =>
         });
 });
 
+// Add Book To DataBase 
+server.post('/add', (req,res) =>
+{
+    res.render('pages/serches/add',{books:req.body});
+});
+
+
+server.post('/books', (req,res) =>
+{
+    let { image, title, author, des, isbn, bookshelf } = req.body
+
+    let SQL = `INSERT INTO books (image, title, author, des, isbn, bookshelf) VALUES ($1, $2, $3, $4, $5, $6)`
+    let values = [image, title, author, des, isbn, bookshelf]
+
+    client.query(SQL, values)
+        .then(() => {
+            res.redirect('/')
+        })
+});
+
+
 // If you want to use Constructor function you must use the keys names inside the ejs file
 // Otherwise just pass the data inside the object of the render line {anyname: data Path} , "anyname" use same name in the EJS file for foreach
 function Book(data) {
@@ -115,7 +136,7 @@ function Book(data) {
     this.title = data.volumeInfo.title;
     this.isbn = (data.volumeInfo.industryIdentifiers && data.volumeInfo.industryIdentifiers[0].identifier) || ' No ISBN Found';
     this.image = (data.volumeInfo.imageLinks && data.volumeInfo.imageLinks.thumbnail) || ' No Image Found ';
-    this.des = data.volumeInfo.description;
+    this.des = (data.volumeInfo.description && data.volumeInfo) || ' No Description Found ' ;
 } // End of location constructor function 
 
 

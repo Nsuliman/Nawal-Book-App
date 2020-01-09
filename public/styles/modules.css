@@ -54,6 +54,12 @@ main h2 {
 
 .booktitle {
   color: white;
+  text-shadow: 2px 2px black;
+  font-size: larger;
+}
+
+.booktype {
+  font-style: italic;
 }
 
 .selectbutton {

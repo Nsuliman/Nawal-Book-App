@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+    <title>Add To DataBase</title>
+</head>
+<body>
+    
+    <form action="/books" method="post">
+        <label>
+            <input  class="booktitle" type="text" name="title" placeholder="Populated Title:" value="<%= books.title%>">
+            <input  class="bookauthor" type="text" name="author" placeholder="Populated Author:" value=" <%= books.author%>">
+            <input  class="booktype" type="text" name="isbn" placeholder="Populated ISBN:" value="<%= books.isbn%>">
+            <input class="bookimage" type="text" name="image" value="<%= books.image%>">
+            <textarea class="bookdescp" name="description" placeholder="Populated Description:" ><%=books.des%></textarea>
+            <input type="text" name="bookshelf" placeholder="Enter a Bookshelf Name:">
+            <div class="submit">
+                <input type="submit" value="Add To Database"></input>
+            </div>
+        </label>
+    </form>
+
+</body>
+</html>
