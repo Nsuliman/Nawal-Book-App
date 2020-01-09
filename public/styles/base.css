@@ -47,5 +47,43 @@ button {
   font-size: x-large;
 }
 
-/* End of styyling lab11  */
+input[type=text] {
+  width: 450px;
+  padding: 12px 20px;
+  margin-left: 80px ;
+  margin: 20px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  text-align: center;
+  height: 50px;
+  color: black;
+  font-family: 'Playfair Display', serif;
+  font-weight: bolder;
+}
 
+.addForm {
+  background-color: gray;
+  text-align: right;
+  width: 500px;
+}
+
+textarea {
+  width: 450px;
+  height: 200px;
+  padding: 12px 20px;
+  margin-left: 80px ;
+  margin: 20px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+  font-weight: bolder;
+}
+
+.addForm input::placeholder {
+  color: lightslategray;
+}

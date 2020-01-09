@@ -69,3 +69,13 @@ main h2 {
 .searchbutton {
   margin-left: 55px;
 }
+
+.submit input {
+  background-color: black;
+  color: white;
+  margin-right: 25px;
+  padding: 10px;
+  width: 50%;
+  font-family: 'Playfair Display', serif;
+  font-size: large;
+}
