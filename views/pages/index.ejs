@@ -26,7 +26,7 @@
         <p class="booktitle">Title : <%-book.title%></p>
         <p class="bookauthor">Author : <%-book.author %></p>
        
-    <form action="/pages/indexsgow" method="GET">
+    <form action="/books/<%= book.id%>" method="GET">
         <button class="selectbutton" type="submit"> View Details </button>
  </form>
     <br><br><br><br>

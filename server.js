@@ -42,7 +42,7 @@ server.get('/error', (request, response) => {
     response.render('pages/error');
 });
 
-// Rendering index.ejs 
+// Rendering New Search
 server.get('/new', (req, res) => {
     res.render('pages/serches/new');
 });
@@ -93,6 +93,18 @@ server.post('/searches', (req, res) => {
         });
 });
 
+
+// View Details
+server.get('/books/:books_id',(req,res) =>
+{
+    let SQL = `SELECT * FROM books WHERE id=$1`
+    let values = [req.params.books_id]
+
+    client.query(SQL, values)
+        .then(results => {
+            res.render('pages/books/detail', { books: results.rows })
+        });
+});
 
 // If you want to use Constructor function you must use the keys names inside the ejs file
 // Otherwise just pass the data inside the object of the render line {anyname: data Path} , "anyname" use same name in the EJS file for foreach
