@@ -87,3 +87,27 @@ textarea {
 .addForm input::placeholder {
   color: lightslategray;
 }
+
+footer {
+  color: white;
+  text-align: center;
+  padding: 10px;
+}
+
+.errorH1 {
+  color: white;
+  text-align: center;
+}
+
+.errorLink {
+  color: red;
+  font-weight: bolder;
+  margin-left: 40%;
+}
+
+.addForm input[type=submit]:hover {
+  color: aqua;
+  background-color: black;
+}
+
+

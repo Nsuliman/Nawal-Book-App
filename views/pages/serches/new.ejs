@@ -4,9 +4,8 @@
 <head>
   <title>We are in index EJS </title>
   <!-- <link rel="stylesheet" href="styles/reset.css"> -->
-  <link rel="stylesheet" href="styles/base.css">
-  <link rel="stylesheet" href="styles/modules.css">
-  <link rel="stylesheet" href="styles/layout.css">
+  <%- include('../../layout/head') %> 
+
 
 </head>
 
@@ -36,6 +35,11 @@
 
     
   </main>
+
+  <footer>
+    <%- include('../../layout/footer') %> 
+</footer>
+
 </body>
 
 </html>
