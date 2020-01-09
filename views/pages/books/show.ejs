@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Books</title>
+    <%- include('../../layout/head') %> 
+</head>
+
+<body>
+    <header>
+        <h1> Best Books !</h1>
+    </header>
+    <main>
+        <h2> Search Results </h2>
+        <% books.forEach((book)=> { %>
+        <div class="bookdetails">
+            <p> ** Book Details ** </p><br>
+            <img class="bookimage" src=<%=book.image %><br>
+            <p class="booktitle">Title : <%-book.title%></p>
+            <p class="bookauthor">Author : <%-book.author %></p>
+            <p class="bookdescp">Book Description :<%= book.des%></p>
+            <form action ='/add' method="POST" class="formBook">
+                <input type="hidden" name="image" value="<%= book.image%>">
+                <input type="hidden" name="title" value="<%= book.title%>">
+                <input type="hidden" name="author" value="<%= book.author%>">
+                <input type="hidden" name="des" value="<%= book.des%>">
+                <input type="hidden" name="isbn" value="<%= book.isbn%>">
+                <button class="selectbutton" type="submit"> Select This Book </button>
+            </form>
+            <br><br><br><br>
+        </div>
+        <% }); %>
+    </main>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="../../public/js/app.js"></script>
+
+    <footer>
+        <%- include('../../layout/footer') %> 
+    </footer>
+
+</body>
+
+</html>

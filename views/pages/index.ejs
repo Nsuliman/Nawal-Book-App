@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>DataBase</title>
+
+    <!-- <link rel="stylesheet" href="styles/reset.css"> -->
+    <%- include('../layout/head') %> 
+
+
+</head>
+<body>
+     <header>
+    <h1> Best Books !</h1>
+  </header>
+
+  <main>
+    <h2> Saved Books </h2>
+    <p class="numOfBooks"> <%= books.length%></p>
+
+
+    <% books.forEach((book)=> { %>
+        <div class="bookdetails">
+        <p> ** Book Details ** </p><br>
+        <img class="bookimage" src=<%=book.image %><br>
+        <p class="booktitle">Title : <%-book.title%></p>
+        <p class="bookauthor">Author : <%-book.author %></p>
+       
+    <form action="/books/<%= book.id%>" method="GET">
+        <button class="selectbutton" type="submit"> View Details </button>
+ </form>
+    <br><br><br><br>
+</div>
+    <% }); %>
+
+  </main>
+
+  <footer>
+    <%- include('../layout/footer') %> 
+  </footer>
+</body>
+</html>

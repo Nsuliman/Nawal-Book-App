@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Books</title>
+    <link rel="stylesheet" href="../styles/base.css">
+    <link rel="stylesheet" href="../styles/modules.css">
+    <link rel="stylesheet" href="../styles/layout.css">
+
+</head>
+
+<body>
+    <header>
+        <h1> Best Books !</h1>
+    </header>
+    <main>
+                <% books.forEach((book)=> { %>
+                    <div class="bookdetails">
+                        <p> ** Book Details ** </p><br>
+                    <img class="bookimage" src=<%=book.image %><br>
+                    <p class="booktitle">Title : <%-book.title%></p>
+                    <p class="bookauthor">Author : <%-book.author %></p>
+                    <p class="bookdescp">Book Description :<%= book.des%></p>
+                    <p class="booktype"> ISBN : <%= book.isbn %></p>
+                    <p class="bookshelf"> Book-Shelf : <%= book.bookshelf%></p>
+                <br><br><br><br>
+            </div>
+                <% }); %>
+        </main>
+
+        <footer>
+            <%- include('../../layout/footer') %> 
+        </footer>
+</body>
+
+</html>

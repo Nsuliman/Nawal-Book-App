@@ -1,0 +1,113 @@
+/* Styling index ejs  */
+
+body {
+  background-color: black;
+  width: 500px;
+  margin: 0px auto;
+  border: 3px solid gray;
+  /* text-align: center; */
+  }
+
+  header {
+    background-color: black;
+    color: white;
+    padding: 10px;
+  }
+
+  main  {
+    background-color: gray;
+  }
+
+
+  form {
+  display:flex;
+  flex-direction:column;
+  width: 300px;
+}
+
+
+label {
+  display:flex;
+  flex-direction:column;
+  margin-bottom: 1.5em;
+  font-size: x-large;
+}
+
+button {
+  background-color: black;
+  color: white;
+  padding: 20px;
+  width: 390px ;
+  margin-left: 0px;
+  margin-right: 55px;
+  margin-top: 30px;
+  text-align: center;
+  border-radius: 5px;
+  font-family: cursive;
+  font-size: x-large;
+}
+
+input[type=text] {
+  width: 450px;
+  padding: 12px 20px;
+  margin-left: 80px ;
+  margin: 20px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  text-align: center;
+  height: 50px;
+  color: black;
+  font-family: 'Playfair Display', serif;
+  font-weight: bolder;
+}
+
+.addForm {
+  background-color: gray;
+  text-align: right;
+  width: 500px;
+}
+
+textarea {
+  width: 450px;
+  height: 200px;
+  padding: 12px 20px;
+  margin-left: 80px ;
+  margin: 20px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+  font-weight: bolder;
+}
+
+.addForm input::placeholder {
+  color: lightslategray;
+}
+
+footer {
+  color: white;
+  text-align: center;
+  padding: 10px;
+}
+
+.errorH1 {
+  color: white;
+  text-align: center;
+}
+
+.errorLink {
+  color: red;
+  font-weight: bolder;
+  margin-left: 40%;
+}
+
+.addForm input[type=submit]:hover {
+  color: aqua;
+  background-color: black;
+}
+
+
