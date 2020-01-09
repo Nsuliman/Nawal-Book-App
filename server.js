@@ -27,7 +27,7 @@ server.use(express.static('./public'));
 server.use(express.urlencoded({ extended: true }));
 server.set('view engine', 'ejs');
 // server.use(methodOverride(middleware));
-server.use(expressLayouts);
+// server.use(expressLayouts);
 
 
 /******************************* Routes ***********************************/
@@ -47,15 +47,16 @@ server.get('/', (req, res) => {
     res.render('pages/index');
 });
 
-// Restore Data From DataBase 
-// server.get('/data', (req,res) =>
-// {
-//     let SQL = `SELECT * FROM books `
-//     client.query(SQL)
-//         .then(data => {
-//             res.render('pages/index', { books: data.rows })
-//         })
-// });
+//Restore Data From DataBase 
+server.get('/data', (req,res) =>
+{
+    let SQL = `SELECT * FROM books `
+    client.query(SQL)
+        .then(data => {
+            res.render('pages/indexshow', { books: data.rows })
+            // res.render('pages/indexshow');
+        })
+});
 
 
 // Shows the Results 
