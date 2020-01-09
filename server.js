@@ -43,17 +43,17 @@ server.get('/error', (request, response) => {
 });
 
 // Rendering index.ejs 
-server.get('/', (req, res) => {
-    res.render('pages/index');
+server.get('/new', (req, res) => {
+    res.render('pages/serches/new');
 });
 
 //Restore Data From DataBase 
-server.get('/data', (req,res) =>
+server.get('/', (req,res) =>
 {
     let SQL = `SELECT * FROM books `
     client.query(SQL)
         .then(data => {
-            res.render('pages/indexshow', { books: data.rows })
+            res.render('pages/index', { books: data.rows })
             // res.render('pages/indexshow');
         })
 });

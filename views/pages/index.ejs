@@ -1,41 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <title>We are in index EJS </title>
-  <!-- <link rel="stylesheet" href="styles/reset.css"> -->
+    <title>DataBase</title>
+
+    <!-- <link rel="stylesheet" href="styles/reset.css"> -->
   <link rel="stylesheet" href="styles/base.css">
   <link rel="stylesheet" href="styles/modules.css">
   <link rel="stylesheet" href="styles/layout.css">
 
 </head>
-
 <body>
-  <header>
+     <header>
     <h1> Best Books !</h1>
   </header>
+
   <main>
-    <h2> Search By a Title Or Author </h2>
-    <form action="/searches" method="post">
-      <input id="searchbox" name="search" placeholder='Enter a Title Or Author' style="color: black;" />
-      <br><br>
-
-      <label class="container">Title
-        <input type="radio" name="searchtype" value="title">
-        <span class="checkmark"></span>
-      </label>
-
-      <label class="container">Author
-        <input type="radio" name="searchtype" value="author">
-        <span class="checkmark"></span>
-      </label>
-
-      <button class="searchbutton" type="submit"> Search The Google Books API</button><br><br>
-    </form>
+    <h2> Saved Books </h2>
+    <p class="numOfBooks"> <%= books.length%></p>
 
 
-    
+    <% books.forEach((book)=> { %>
+        <div class="bookdetails">
+        <p> ** Book Details ** </p><br>
+        <img class="bookimage" src=<%=book.image %><br>
+        <p class="booktitle">Title : <%-book.title%></p>
+        <p class="bookauthor">Author : <%-book.author %></p>
+       
+    <form action="/pages/indexsgow" method="GET">
+        <button class="selectbutton" type="submit"> View Details </button>
+ </form>
+    <br><br><br><br>
+</div>
+    <% }); %>
+
   </main>
 </body>
-
 </html>
