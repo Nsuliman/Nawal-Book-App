@@ -6,43 +6,43 @@
     <link rel="stylesheet" href="../styles/base.css">
     <link rel="stylesheet" href="../styles/modules.css">
     <link rel="stylesheet" href="../styles/layout.css">
-
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
 </head>
 
 <body>
     <header>
-        <%- include('../../layout/header') %> 
+        <%- include('../../layout/header') %>
     </header>
     <main>
-                <% books.forEach((book)=> { %>
-                    <div class="bookdetails">
-                        <p> ** Book Details ** </p><br>
-                    <img class="bookimage" src=<%=book.image %><br>
-                    <p class="booktitle">Title : <%-book.title%></p>
-                    <p class="bookauthor">Author : <%-book.author %></p>
-                    <p class="bookdescp">Book Description :<%= book.des%></p>
-                    <p class="booktype"> ISBN : <%= book.isbn %></p>
-                    <p class="bookshelf"> Book-Shelf : <%= book.bookshelf%></p>
-                <br><br><br><br>
-            </div>
+        <% books.forEach((book)=> { %>
+        <div class="bookdetails">
+            <p class="detailp"> ** Book Details ** </p><br>
+            <img class="bookimage" src=<%=book.image %><br>
+            <p class="booktitle">Title : <%-book.title%></p>
+            <p class="bookauthor">Author : <%-book.author %></p>
+            <p class="bookdescp">Book Description :<%= book.des%></p>
+            <p class="booktype"> ISBN : <%= book.isbn %></p>
+            <p class="bookshelf"> Book-Shelf : <%= book.bookshelf%></p>
+            <br>
+     
 
-            <form action ='/update' method="POST" class="formBook">
-                <input type="hidden" name="id" value="<%= book.id%>">
-                <input type="hidden" name="image" value="<%= book.image%>">
-                <input type="hidden" name="title" value="<%= book.title%>">
-                <input type="hidden" name="author" value="<%= book.author%>">
-                <input type="hidden" name="des" value="<%= book.des%>">
-                <input type="hidden" name="isbn" value="<%= book.isbn%>">
-                <input type="hidden" name="bookshelf" value="<%= book.bookshelf%>">
-                <button class="updateButton" type="submit"> Update</button>
-            </form>
+        <form action='/update' method="POST" class="formBook">
+            <input type="hidden" name="id" value="<%= book.id%>">
+            <input type="hidden" name="image" value="<%= book.image%>">
+            <input type="hidden" name="title" value="<%= book.title%>">
+            <input type="hidden" name="author" value="<%= book.author%>">
+            <input type="hidden" name="des" value="<%= book.des%>">
+            <input type="hidden" name="isbn" value="<%= book.isbn%>">
+            <input type="hidden" name="bookshelf" value="<%= book.bookshelf%>">
+            <button class="updateButton" type="submit"> Update Details</button>
+        </form>
+    </div>
+        <% }); %>
+    </main>
 
-                <% }); %>
-        </main>
-
-        <footer>
-            <%- include('../../layout/footer') %> 
-        </footer>
+    <footer>
+        <%- include('../../layout/footer') %>
+    </footer>
 </body>
 
 </html>
