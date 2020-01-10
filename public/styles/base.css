@@ -45,6 +45,7 @@ button {
   border-radius: 5px;
   font-family: cursive;
   font-size: x-large;
+  font-family: 'Roboto', sans-serif;
 }
 
 input[type=text] {
@@ -111,3 +112,46 @@ footer {
 }
 
 
+.updateButton {
+  color: white;
+  background-color: rgb(51, 51, 51);
+  border: 2px solid rgb(125, 127, 129);
+  width: 160px;
+  padding: 10px;
+  font-size: large;
+  border-radius: 10px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.deletebutton {
+  color: white;
+  background-color: rgb(51, 51, 51);
+  border: 2px solid rgb(125, 127, 129);
+  width: 160px;
+  padding: 10px;
+  font-size: large;
+  border-radius: 10px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.updateForm {
+  background-color: gray;
+  text-align: right;
+  width: 500px;
+}
+
+.updateForm input[type=submit]:hover {
+  color: aqua;
+  background-color: black;
+}
+.updateForm input::placeholder {
+  color: lightslategray;
+}
+
+.update-delete {
+  display:flex;
+  flex-direction:row;
+  width: 300px;
+  justify-content: space-between;
+  margin-left: 10px;
+}

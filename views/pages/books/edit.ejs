@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> Edit Books</title>
+    <link rel="stylesheet" href="../styles/base.css">
+    <link rel="stylesheet" href="../styles/modules.css">
+    <link rel="stylesheet" href="../styles/layout.css">
+
+</head>
+
+<body>
+    <header>
+        <%- include('../../layout/header') %> 
+    </header>
+    <main>
+        <form class="updateForm" action="/update/<%= books.id%>" method="post">
+            <label>
+                <!-- no need to show its up  -->
+                <input type="hidden" name="_method" value="put">
+                <input type="hidden" name="id" value="books.id">
+
+                <input  type="text" name="title" placeholder="Populated Title:" value="<%= books.title%>">
+                <input  type="text" name="author" placeholder="Populated Author:" value=" <%= books.author%>">
+                <input  type="text" name="isbn" placeholder="Populated ISBN:" value="<%= books.isbn%>">
+                <input  type="text" name="image" value="<%= books.image%>">
+                <textarea  name="des" placeholder="Populated Description:" ><%=books.des%></textarea>
+                <input type="text" name="bookshelf" placeholder="Enter a Bookshelf Name:" value="<%= books.bookshelf%>">
+                <div class="submit">
+                    <input type="submit" value="Update Book"></input>
+                </div>
+            </label>
+        </form>
+        </main>
+
+        <footer>
+            <%- include('../../layout/footer') %> 
+        </footer>
+</body>
+
+</html>
