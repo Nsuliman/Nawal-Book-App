@@ -151,6 +151,21 @@ server.put('/update/:books_id', (req, res) => {
         })
 });
 
+
+// Delete Book 
+server.delete('/delete/:books_id', (req,res) =>
+{
+    let SQL = `DELETE FROM books WHERE id=$1`
+    // // console.log('SQL : ', SQL);
+    let values = [req.params.books_id]
+    // // console.log('values : ', values);
+
+    client.query(SQL, values)
+        .then(() => {
+            res.redirect('/')
+        })
+});
+
 // If you want to use Constructor function you must use the keys names inside the ejs file
 // Otherwise just pass the data inside the object of the render line {anyname: data Path} , "anyname" use same name in the EJS file for foreach
 function Book(data) {

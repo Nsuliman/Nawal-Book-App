@@ -123,6 +123,16 @@ footer {
   font-family: 'Roboto', sans-serif;
 }
 
+.deletebutton {
+  color: white;
+  background-color: rgb(51, 51, 51);
+  border: 2px solid rgb(125, 127, 129);
+  width: 160px;
+  padding: 10px;
+  font-size: large;
+  border-radius: 10px;
+  font-family: 'Roboto', sans-serif;
+}
 
 .updateForm {
   background-color: gray;
@@ -138,4 +148,12 @@ footer {
 
 .updateForm input::placeholder {
   color: lightslategray;
+}
+
+.update-delete {
+  display:flex;
+  flex-direction:row;
+  width: 300px;
+  justify-content: space-between;
+  margin-left: 10px;
 }
