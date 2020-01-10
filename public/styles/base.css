@@ -144,8 +144,6 @@ footer {
   color: aqua;
   background-color: black;
 }
-
-
 .updateForm input::placeholder {
   color: lightslategray;
 }
